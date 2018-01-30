@@ -1,1 +1,4 @@
 vendor/**
+
+# ignore executable
+chi-api

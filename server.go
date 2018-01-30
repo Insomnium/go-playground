@@ -1,9 +1,14 @@
 package main
 
 import (
-    "fmt"
+    "github.com/go-chi/chi"
+    "net/http"
 )
 
 func main() {
-    fmt.Println("Hello there!")
+    r := chi.NewRouter()
+    r.Get("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("welcome"))
+	})
+    http.ListenAndServe(":3333", r)
 }
